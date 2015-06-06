@@ -12,8 +12,13 @@ Template.story.events({
 
     event.preventDefault();
     var position = Phrases.find().count() + 1;
-    var phrase = template.find('.nouveau').value;
+    var phrase = template.find('.nouveau');
 
-    Phrases.insert( { position: position, phrase: phrase } );
+    Phrases.insert({
+      position: position,
+      phrase: phrase.value
+    });
+
+    phrase.value = '';
   }
 });
