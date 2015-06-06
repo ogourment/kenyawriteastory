@@ -6,14 +6,14 @@
 
 <body>
   <div class="outer">
-    <div class="logo"></div>
-    <h1 class="title">Histoires</h1>
-    <div class="subtitle">Écris un bout de phrase pour compléter l'histoire</div>
     {{> story}}
   </div>
 </body>
 
 <template name="story">
+  {{> photo}}
+  <h1 class="title">Histoires</h1>
+  <div class="subtitle">Écris un bout de phrase pour compléter l'histoire</div>
   <form>
     {{#each phrases}}
       {{> phrase}}
@@ -25,4 +25,12 @@
 
 <template name="phrase">
   <span class="phrase">{{phrase}}&nbsp;</span>
+</template>
+
+<template name="photo">
+  {{#if photo}}
+    <img class="photo" src="{{photo}}" width="250">
+  {{else}}
+    <button class="button takePhoto">Prendre une photo</button>
+  {{/if}}
 </template>

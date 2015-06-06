@@ -22,3 +22,26 @@ Template.story.events({
     phrase.value = '';
   }
 });
+
+Template.photo.helpers({
+  photo: function () {
+    var photo = Photos.findOne();
+    return photo ? photo.data : "";
+  }
+});
+
+Template.photo.events({
+
+  'click .takePhoto': function (event, template) {
+    var cameraOptions = {
+      width: 800,
+      height: 600
+    };
+    MeteorCamera.getPicture(cameraOptions, function (error, data) {
+      if (!error) {
+        Photos.insert({ data: data });
+      }
+    });
+    event.preventDefault();
+  }
+});
