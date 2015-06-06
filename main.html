@@ -12,8 +12,13 @@
 
 <template name="story">
   {{> photo}}
-  <h1 class="title">Histoires</h1>
-  <div class="subtitle">Écris un bout de phrase pour compléter l'histoire</div>
+  {{#if title}}
+    <h1 class="title">{{title}}</h1>
+  {{else}}
+    <input type="text" name="title" placeholder="titre de l'histoire" />
+    <input class="button nommer" type="submit" value="Nommer" />
+  {{/if}}
+  <h3>Écris un bout de phrase pour compléter l'histoire :</h3>
   <form>
     {{#each phrases}}
       {{> phrase}}
@@ -28,9 +33,11 @@
 </template>
 
 <template name="photo">
-  {{#if photo}}
-    <img class="photo" src="{{photo}}" width="250">
-  {{else}}
-    <button class="button takePhoto">Prendre une photo</button>
-  {{/if}}
+  <div class="photoGroup">
+    {{#if photo}}
+      <img class="photo" src="{{photo}}" width="250">
+    {{else}}
+      <button class="button takePhoto">Prendre une photo</button>
+    {{/if}}
+  </div>
 </template>

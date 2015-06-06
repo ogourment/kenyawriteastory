@@ -68,7 +68,11 @@ input[type="text"]:focus {
 }
 
 .button.ajouter {
-  background-color: #5B74A8;
+  background-color: blue;
+}
+
+.button.giveTitle {
+  background-color: orange;
 }
 
 .button.takePhoto {

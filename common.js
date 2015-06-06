@@ -3,3 +3,5 @@
 Phrases = new Mongo.Collection("phrases");
 
 Photos = new Mongo.Collection("photos");
+
+Stories = new Mongo.Collection("stories");

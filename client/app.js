@@ -1,12 +1,28 @@
 //client only code
 
 Template.story.helpers({
+
+  title: function () {
+    var title = Stories.findOne();
+    return title ? title.title : '';
+  },
   phrases: function () {
     return Phrases.find({}, { sort: { position: 1 } });
   }
 });
 
 Template.story.events({
+
+  'click .nommer': function (event, template) {
+
+    event.preventDefault();
+
+    var title = template.find('input[name="title"]');
+
+    Stories.insert({
+      title: title.value
+    });
+  },
 
   'submit form': function (event, template) {
 
