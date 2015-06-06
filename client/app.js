@@ -1,29 +1,19 @@
 //client only code
 
-Template.leaderboard.helpers({
-  players: function () {
-    return Players.find({}, { sort: { score: -1, name: 1 } });
-  },
-  selectedName: function () {
-    var player = Players.findOne(Session.get("selectedPlayer"));
-    return player && player.name;
+Template.story.helpers({
+  phrases: function () {
+    return Phrases.find({}, { sort: { position: 1 } });
   }
 });
 
-Template.leaderboard.events({
-  'click .inc': function () {
-    Players.update(Session.get("selectedPlayer"), {$inc: {score: 5}});
-  }
-});
+Template.story.events({
 
-Template.player.helpers({
-  selected: function () {
-    return Session.equals("selectedPlayer", this._id) ? "selected" : '';
-  }
-});
+  'submit form': function (event, template) {
 
-Template.player.events({
-  'click': function () {
-    Session.set("selectedPlayer", this._id);
+    event.preventDefault();
+    var position = Phrases.find().count() + 1;
+    var phrase = template.find('.nouveau').value;
+
+    Phrases.insert( { position: position, phrase: phrase } );
   }
 });

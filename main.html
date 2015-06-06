@@ -1,38 +1,28 @@
 <head>
-  <title>Leaderboard</title>
-  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>Histoires</title>
+  <meta name="viewport" content="width=device-width">
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
   <div class="outer">
     <div class="logo"></div>
-    <h1 class="title">Leaderboard</h1>
-    <div class="subtitle">Select a scientist to give them points</div>
-    {{> leaderboard}}
+    <h1 class="title">Histoires</h1>
+    <div class="subtitle">Écris un bout de phrase pour compléter l'histoire</div>
+    {{> story}}
   </div>
 </body>
 
-<template name="leaderboard">
-  <ol class="leaderboard">
-    {{#each players}}
-      {{> player}}
+<template name="story">
+  <form>
+    {{#each phrases}}
+      {{> phrase}}
     {{/each}}
-  </ol>
-
-  {{#if selectedName}}
-    <div class="details">
-      <div class="name">{{selectedName}}</div>
-      <button class="inc">Add 5 points</button>
-    </div>
-  {{else}}
-    <div class="message">Click a player to select</div>
-  {{/if}}
+    <input class="nouveau" type="text" placeholder="mon bout de phrase" autofocus />
+    <input class="button ajouter" type="submit" value="Ajouter" />
+  </form>
 </template>
 
-<template name="player">
-  <li class="player {{selected}}">
-    <span class="name">{{name}}</span>
-    <span class="score">{{score}}</span>
-  </li>
+<template name="phrase">
+  <span class="phrase">{{phrase}}&nbsp;</span>
 </template>
