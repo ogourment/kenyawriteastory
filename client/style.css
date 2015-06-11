@@ -7,8 +7,8 @@ body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: normal;
-  margin: 3em 0;
   padding: 0;
+  background-image: url(/kenya.jpg); background-repeat: no-repeat;
 }
 
 .outer {
