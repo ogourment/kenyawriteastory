@@ -33,7 +33,7 @@ Template.story.events({
 
     event.preventDefault();
     var position = Phrases.find().count() + 1;
-    var phrase = template.find('.nouveau');
+    var phrase = template.find('.new');
 
     Phrases.insert({
       position: position,
