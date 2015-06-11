@@ -18,7 +18,6 @@ Template.story.events({
     Meteor.call('eraseAll');
   },
 
-
   'click .rename': function (event, template) {
 
     event.preventDefault();

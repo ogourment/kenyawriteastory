@@ -4,7 +4,7 @@
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
 </head>
 
-<body>
+<body style="background-image: url(/kenya.jpg); background-color: rgba(0, 0, 0, 0); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;">
   <div class="outer">
     {{> story}}
   </div>
@@ -16,7 +16,7 @@
   {{#if title}}
     <h1 class="title">{{title}}</h1>
   {{else}}
-    <input type="text" name="title" placeholder="titre de l'histoire" />
+    <input type="text" name="title" placeholder="Title of the story" />
     <input class="button rename" type="submit" value="Nommer" />
   {{/if}}
   <h3>Écris un bout de phrase pour compléter l'histoire :</h3>
@@ -24,8 +24,8 @@
     {{#each phrases}}
       {{> phrase}}
     {{/each}}
-    <input class="nouveau" type="text" placeholder="mon bout de phrase" autofocus />
-    <input class="button ajouter" type="submit" value="Ajouter" />
+    <input class="new" type="text" placeholder="my sentence" autofocus />
+    <input class="button add" type="submit" value="Add" />
   </form>
 
   {{#if title}}
@@ -43,7 +43,7 @@
     {{#if photo}}
       <img class="photo" src="{{photo}}" width="250">
     {{else}}
-      <button class="button takePhoto">Prendre une photo</button>
+      <button class="button takePhoto">Take a photo</button>
     {{/if}}
   </div>
 </template>
