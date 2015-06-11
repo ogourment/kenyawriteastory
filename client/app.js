@@ -13,7 +13,13 @@ Template.story.helpers({
 
 Template.story.events({
 
-  'click .nommer': function (event, template) {
+  'click .eraseAll': function (event, template) {
+
+    Meteor.call('eraseAll');
+  },
+
+
+  'click .rename': function (event, template) {
 
     event.preventDefault();
 

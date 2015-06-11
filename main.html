@@ -12,11 +12,12 @@
 
 <template name="story">
   {{> photo}}
+  <br />
   {{#if title}}
     <h1 class="title">{{title}}</h1>
   {{else}}
     <input type="text" name="title" placeholder="titre de l'histoire" />
-    <input class="button nommer" type="submit" value="Nommer" />
+    <input class="button rename" type="submit" value="Nommer" />
   {{/if}}
   <h3>Écris un bout de phrase pour compléter l'histoire :</h3>
   <form>
@@ -26,6 +27,11 @@
     <input class="nouveau" type="text" placeholder="mon bout de phrase" autofocus />
     <input class="button ajouter" type="submit" value="Ajouter" />
   </form>
+
+  {{#if title}}
+    <br />
+    <input class="button eraseAll" type="submit" value="Recommencer" />
+  {{/if}}
 </template>
 
 <template name="phrase">

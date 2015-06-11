@@ -78,3 +78,7 @@ input[type="text"]:focus {
 .button.takePhoto {
   background-color: green;
 }
+
+.button.eraseAll {
+  background-color: red;
+}
