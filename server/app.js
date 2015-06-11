@@ -22,7 +22,7 @@ Meteor.methods({
 
 function _createPhrases() {
 
-  var phrases = [ "Il était une fois" ];
+  var phrases = [ "Once upon a time" ];
 
   var position = 0;
 
