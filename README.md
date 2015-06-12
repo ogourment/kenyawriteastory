@@ -1,8 +1,9 @@
-Ken-ya Write a Story
+Ken-ya Write a Story?
+===
 
 The "Ken-ya Write a Story" prototype was created for a competition at Concordia's University @D3Centre as part of the **Ken-ya Innovate Challenge** (June 11, 2015)
 
-Read more about this event [here](http://socialinnovationchallenges.splashthat.com/)
+Read more about this event [here](http://socialinnovationchallenges.splashthat.com/).
 
 This is a simple game to allow kids to practice writing stories in any language their teacher tells them to, with the goal to improve literacy.
 
