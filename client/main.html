@@ -1,49 +1,80 @@
-<head>
-  <title>Ken-Ya Write a Story</title>
-  <meta name="viewport" content="width=device-width">
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
-</head>
+
+    <head>
+      <title>Ken-Ya Write a Story</title>
+      <meta name="viewport" content="width=device-width">
+      <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
+    </head>
 
 <body>
-  <div class="outer">
-    {{> story}}
-  </div>
+	<ul>
+		<li><a href="">Home</a></li>
+		<li><a href="">My profil</a></li>
+		<li><a href="">All Stories</a></li>
+	</ul>
+
+  {{#if title}}<h1 class="title">{{title}}</h1>
+
+    <div class="outer">
+      {{> story}}
+    </div>
+    <footer>
+    	<div id="play">
+    		<a href=""><img src="icon_play.png" alt="play video"></a>
+    		<!-- a screen open. The story scrolls automatically as a video. -->
+    		<a href=""><img src="icon_pause.png" alt="stop video"></a>
+    		<!--<a href=""><img src="" alt="comeback"></a>-->
+    	</div>
+    </footer>
 </body>
 
-<template name="story">
-  {{> photo}}
-  <br />
-  {{#if title}}
-    <h1 class="title">{{title}}</h1>
-  {{else}}
-    <input type="text" name="title" placeholder="Title of the story" />
-    <input class="button rename" type="submit" value="Set" />
-  {{/if}}
-  <h3>Write a sentence to complete the story:</h3>
-  <form>
-    {{#each phrases}}
-      {{> phrase}}
-    {{/each}}
-    <input class="new" type="text" placeholder="my sentence" autofocus />
-    <input class="button add" type="submit" value="Add" />
-  </form>
+    <template name="story">
 
-  {{#if title}}
-    <br />
-    <input class="button eraseAll" type="submit" value="Erase all" />
-  {{/if}}
-</template>
+    
 
-<template name="phrase">
-  <span class="phrase">{{phrase}}&nbsp;</span>
-</template>
+    	
+    		
+    		{{else}}
+	        <input class="title_custom" type="text" name="title" placeholder="Your title" />
+	        <input class="button rename" type="submit" value="Set" />
 
-<template name="photo">
-  <div class="photoGroup">
-    {{#if photo}}
-      <img class="photo" src="{{photo}}" width="250">
-    {{else}}
-      <button class="button takePhoto">Take a photo</button>
-    {{/if}}
-  </div>
-</template>
+   		   {{> photo}}
+    		<br />
+           {{/if}}
+
+   		<h3>Once upon a time,</h3>
+		      <form>
+		        {{#each phrases}}
+		        {{> phrase}}
+		        {{/each}}
+
+		        <input class="new" type="text" placeholder="Write a sentence to complete the story" autofocus />
+		        <input class="button add" type="submit" value="Add" />
+		      </form>
+
+     			{#if title}}
+       			<br />
+
+        		<input class="button eraseAll" type="submit" value="Erase all" />
+     			{{/if}}
+    </template>
+
+	    <template name="phrase">
+		      <span class="phrase">
+		      	{{phrase}}&nbsp;
+		      </span>
+	    </template>
+
+	    <template name="photo">
+		      <div class="photoGroup">
+
+		        {{#if photo}}
+		          <img class="photo" src="{{photo}}" width="250">
+		        {{else}}
+		          <button class="button takePhoto">
+		          	<img src="icon_photo.png" alt="take a photo">
+		          </button>
+		        {{/if}}
+
+		      </div>
+	    </template>
