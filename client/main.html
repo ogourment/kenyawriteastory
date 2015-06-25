@@ -6,17 +6,20 @@
 </head>
 
 <body>
-  <ul><li><a href="">Home</a></li>
-    <li><a href="">My profil</a><li>
+  <ul>
+    <li><a href="">Home</a></li>
     <li><a href="">All stories</a></li>
+    <li><a href="">My profil</a></li>
   </ul>
+  <hr class="dash">
+
   <div class="outer">
     {{> story}}
   </div>
-<footer>
+<!--<footer>
   <div id="play"><a href=""><img src="icon_play.png" alt="play video"></a><a href=""><img src="icon_pause.png" alt="stop video"></a>
   </div>
-</footer>
+</footer>-->
 </body>
 
 <template name="story">
@@ -24,7 +27,8 @@
   <h1 class="title">{{title}}</h1>
   {{else}}
   <input class="title_custom" type="text" name="title" placeholder="Your title" />
-    <input class="button rename" type="submit" value="Set" />
+  <!--<input class="button rename" type="submit" value="Set" />-->
+  <input class="bouton_custom" type="image" src="icon_write.png" />
   <br />
     
   {{/if}}
@@ -34,8 +38,9 @@
     {{#each phrases}}
       {{> phrase}}
     {{/each}}
-    <input class="new" type="text" placeholder="Write a sentence to complete the story" autofocus />
-    <input class="button add" type="submit" value="Add" />
+   <input class="new" type="text" placeholder="Write a sentence to complete the story" autofocus /> 
+   <!--<input class="button add" type="submit" value="Add" /> -->
+   <input class="bouton_custom" type="image" src="icon_write.png" />
   </form>
 
   {{#if title}}
@@ -53,7 +58,8 @@
     {{#if photo}}
       <img class="photo" src="{{photo}}" width="250">
     {{else}}
-      <button class="button takePhoto"><im src="icon_photo.png" alt="take a photo"></button>
+      <button class="button takePhoto"><img src="icon_photo.png" alt="take a photo"></button>
+      <span>Take a photo</span>
     {{/if}}
   </div>
 </template>
