@@ -29,7 +29,7 @@ Template.story.events({
     });
   },
 
-  'submit form': function (event, template) {
+  'click .add': function (event, template) {
 
     event.preventDefault();
     var position = Phrases.find().count() + 1;

@@ -1,32 +1,88 @@
-* {
+/** {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
+}*/
 
 body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: normal;
   padding: 0;
-  background-image: url(/kenya.jpg); background-repeat: no-repeat;
+  background: url(/background-perso.png) no-repeat bottom, url(/background.png) no-repeat;
+  background-size: cover;
 }
 
-.outer {
-  margin: 0 250px;
-  max-width: 800px;
+
+/* ---------------------- MENU ---------------------- */
+ul li a{ 
+	color:#0db3ae;
+	font-size: 1em;
+	text-decoration: none;
+}
+
+ul li a:hover{ 
+	color:#144241;
+	text-decoration: none;
+}
+
+ul li{
+	display: inline;
+	padding:15px;
+	font-family: 'Source Sans Pro';
+  	text-transform: uppercase;
+}
+
+ul{
+	margin-top: 15px;
+	text-align: right;
+	padding-right: 10px;
+}
+
+.dash{
+	height: 2px;
+	border-style:dashed;
+	border-color:#0db3ae;
+	opacity: 0.7;
+}
+
+/* -------------------------------------------- CONTENT -------------------------------------------- */
+
+
+.photoGroup .button{
+	background-color: inherit;
+}
+
+
+.outer .photoGroup{
+	text-align: left;
+	padding:20px;
 }
 
 .photo {
-  align: left;
+  text-align: center;
+}
+
+/* ---------  Title ----------- */ 
+
+
+.outer .title_custom{
+	text-align: left;
+	border-width: 0;
+	background-color: inherit;
+	font-size: 1.2em;
+	width: 90%;
+	text-transform: uppercase;
+	color:#000000;
 }
 
 .title {
   font-size: 1.5em;
-  font-weight: 600;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 400;
   letter-spacing: .3em;
   margin: 0 0 .25em;
   text-align: center;
-  text-indent: .3em;
+ /* text-indent: .3em;*/
   text-transform: uppercase;
 }
 
@@ -37,15 +93,52 @@ body {
   text-align: center;
 }
 
-.phrase {
+.outer {
+  margin: 5% 15% 15% 15%;
+  max-width: 85%;
+  height: auto;
+  background-color:#e0f6f3;
+  text-align: center;
+  padding-top:30px;
+  padding-bottom:30px;
 }
+
+.outer .new{
+	text-align: left;
+	/*padding:10px;*/
+	border-width: 0;
+	background-color: #c7e9dd;
+	font-size: 13px;
+	width: 90%;
+	padding: 10px 5% 10px 3%;
+}
+
+
+.outer h1{
+	text-align: center;
+}
+
+.outer h3{
+	text-align: left;
+	width: 90%;
+	padding: 0 5% 0 5%;
+}
+
+h3{
+	font-family: 'Helvetica';
+	font-size: 15px;
+	/*text-transform: uppercase;*/
+	color:#5a5a5a;
+}
+
 
 input[type="text"] {
   font-family: sans-serif;
   font-size: 18px;
   appearance: none;
   box-shadow: none;
-  border-radius: 5px;
+  border-radius: 0;
+  text-decoration: none;
 }
 
 input[type="text"]:focus {
@@ -53,26 +146,75 @@ input[type="text"]:focus {
 }
 
 .button {
-	box-shadow: rgba(0,0,0,0.0.1) 0 1px 0 0;
-	border:1px solid #29447E;
-	font-size: 18px;
+	box-shadow: none;
+	border:none;
 	height: 28px;
-	color: #fff;
-	border-radius: 5px;
+	border-radius: 0;
+	background-color: inherit;
 }
 
-.button.add {
-  background-color: blue;
+.bouton_custom{
+	height: 30px;
+	/*position: absolute;
+	left:9%;*/
 }
 
-.button.giveTitle {
+.takePhoto:hover, .takePhoto:focus{
+	box-shadow:0 0 0 rgba(255,255,255,0.4);
+}
+
+span{
+    position:absolute;   
+    margin-top:0;
+    margin-left:-155px;   
+    color:#0DB3AE;
+    background:#ffffff;
+    padding:15px;
+    box-shadow:0 0 2px rgba(0,0,0,.5)   
+    transform:scale(0) rotate(0deg);  
+    transition:all .25s;
+    opacity:0;    
+    border: solid 1px;
+    border-color: #0DB3AE; 
+    border-radius:3px;
+}
+
+span:hover, span:focus{
+	ansform:scale(2) rotate(0);
+	opacity:1;
+}
+
+/*.button.giveTitle {
   background-color: orange;
-}
-
-.button.takePhoto {
-  background-color: green;
 }
 
 .button.eraseAll {
   background-color: red;
+}*/
+
+/*#play{
+	background-color: #f9dc1b;
+	height: 50px;
+	width: 100%;
+	opacity: 0,5;
+	text-align: center;
+	margin-bottom:0;
 }
+
+#play a{
+	padding: 10px;
+}*/
+
+
+@media screen and (min-width: 200px) and (max-width: 900px) { 
+
+body {
+  background: url(/background-perso.png) no-repeat bottom, url(background-mobile.png) no-repeat;
+  background-size: cover;
+
+
+}
+
+
+}
+
