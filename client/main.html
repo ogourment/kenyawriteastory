@@ -24,33 +24,30 @@
 
 <template name="story">
   {{#if title}}
-  <h1 class="title">{{title}}</h1>
+    <h1 class="title">{{title}}</h1>
   {{else}}
-  <input class="title_custom" type="text" name="title" placeholder="Your title" />
-  <!--<input class="button rename" type="submit" value="Set" />-->
-  <input class="bouton_custom" type="image" src="icon_write.png" />
-  <br />
-    
+    <input class="title_custom" type="text" name="title" placeholder="Your title" />
+    <button class="bouton_custom rename"><img src="icon_write.png" /></button>
+    <br />
   {{/if}}
+
   {{> photo}}
+
   <h3>Once upon a time,</h3>
   <form>
-    {{#each phrases}}
-      {{> phrase}}
-    {{/each}}
-   <input class="new" type="text" placeholder="Write a sentence to complete the story" autofocus /> 
-   <!--<input class="button add" type="submit" value="Add" /> -->
-   <input class="bouton_custom" type="image" src="icon_write.png" />
+    <p class="phrase">
+      {{#each phrases}}
+        {{phrase}}&nbsp;
+      {{/each}}
+    </p>
+    <input class="new" type="text" placeholder="Write a sentence to complete the story" autofocus />
+    <button class="bouton_custom add"><img src="icon_write.png"/></button>
   </form>
 
   {{#if title}}
     <br />
     <input class="button eraseAll" type="submit" value="Erase all" />
   {{/if}}
-</template>
-
-<template name="phrase">
-  <span class="phrase">{{phrase}}&nbsp;</span>
 </template>
 
 <template name="photo">
